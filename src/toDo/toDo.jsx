@@ -1,48 +1,33 @@
-// import { useState } from "react";
-// function ToDo(){
-//     const [input,setInput]=useState("")
-//     const [tasks,setTasks]=useState([])
-//     function add(){
-//             setTasks([...tasks,input]);
-//             setInput("")    
-//     };
-//     const deleteTask =(index)=>{
-//         var a=tasks.filter((val,i)=>i!==index)
-//         setTasks(a)
-//     }
-//     return(
-//         <>
-//         <input type="text" placeholder="ad the data" value={input} onChange={(e)=>{
-//             e.preventDefault();
-//             setInput(e.target.value)}}/>
-//         <button onClick={add}>add</button>
-//         <ul>
-//            {tasks.map((val,ind)=>{
-//            return <li key={ind}>
-//                 {val}
-//                { console.log(val)}
-//                 <button onClick={()=>{deleteTask(ind)}}>delete</button>
-//             </li>
-//            })}
-//         </ul>
-//         </>
-//         )
-//     }
-//     export default ToDo;
-
 import { useState } from "react";
 function ToDo(){
     const[val,setVal]=useState("");
-    const[list,setList]=useState([])
+    const[list,setList]=useState([]);
+    const[ed,setEdit]=useState(null);
+
     function add(){
-        setList([...list,val])
-        setVal("")
-        // console.log(list)
+        if(val!==""){
+            
+            if(ed!==null){
+                var update=[...list]
+                update[ed]=val
+                setList(update)
+                setEdit(null)
+            }
+            else{
+                setList([...list,val]);
+            }
+        }
+        else{
+            alert("Enter the input")
+        }
+       setVal("")
     }
     function remove(ind){
         setList(list.filter((val,index)=>index!==ind))
     }
-    function edit(){
+    function edit(ind){
+       setVal(list[ind])
+       setEdit(ind)
 
     }
 
@@ -60,7 +45,7 @@ function ToDo(){
             {list.map((value,ind)=>{
                 return <li key={ind}>{value}
                 <button  style={{marginLeft:"12px",width:"100px"}} onClick={()=>remove(ind)}> Remove</button>
-                <button  style={{marginLeft:"12px",width:"100px"}}onClick={edit}> Edit</button>
+                <button  style={{marginLeft:"12px",width:"100px"}}onClick={()=>edit(ind)}> Edit</button>
                 </li>
             })}
         </ul>

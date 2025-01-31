@@ -9,6 +9,7 @@ import Counter from './Tasks/count'
 import AppA from './darktheme/dark'
 import ToDo from './toDo/toDo'
 import Api from './api/apicalling'
+import InfinetScrollTask from './infinetScroll/infinetScroll'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,8 @@ function App() {
      {/* <Counter/> */}
      {/* <AppA/> */}
      {/* <ToDo/> */}
-     <Api/>
+     {/* <Api/> */}
+     <InfinetScrollTask/>
     </>
   )
 }

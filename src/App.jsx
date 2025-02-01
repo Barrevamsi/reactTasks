@@ -13,6 +13,8 @@ import InfinetScrollTask from './infinetScroll/infinetScroll'
 import InfinetS from './Tasks/infinetS'
 import GetValue from './useContext/getValue'
 import Context from './useContext/constext'
+import FocusInput from './useRef\'/useRef'
+import CounterApp from './counterUseref/useRefC'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +31,9 @@ function App() {
      {/* <InfinetS/> */}
      {/* <Context/>
      <GetValue/> */}
+     {/* <FocusInput/> */}
+     {/* <CounterApp/> */}
+
     </>
   )
 }

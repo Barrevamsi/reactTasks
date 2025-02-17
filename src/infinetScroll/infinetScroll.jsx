@@ -12,10 +12,19 @@ const InfiniteScrollTask = () => {
   const [items, setItems] = useState(Array.from({ length: 20 }));
 
   const fetchMoreData = () => {
-    setTimeout(() => {
+    if(items.length<=99){
+       setTimeout(() => {
       setItems(prevItems => [...prevItems, ...Array.from({ length: 20 })]);
     }, 1500);
+    
+    }
+   else{
+      hasMore=false
+    }
   };
+  // if(items.length>=100){
+  //   hasMore=false
+  // }
 
   return (    
     <InfiniteScroll
@@ -23,6 +32,7 @@ const InfiniteScrollTask = () => {
       next={fetchMoreData}
       hasMore={true}
       loader={<h4>Loading...</h4>}
+      endMessage={<h3>END</h3>}
     >
       {items.map((_, index) => (
         <div style={style} key={index}>

@@ -17,7 +17,8 @@ import InfinetScrollTask from './infinetScroll/infinetScroll'
 // import CounterApp from './counterUseref/useRefC'
 // import Dashboard from './student Dashboard/dashboard'
 import CountReducer from './useReducer/useReducer'
-
+import TodouseReducer from './useReducer/todoUsingUseReducer'
+import Practice from './practice/practice'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -35,7 +36,9 @@ function App() {
      <GetValue/> */}
      {/* <FocusInput/> */}
      {/* <CounterApp/> */}
-      <CountReducer/>
+      {/* <CountReducer/> */}
+      {/* <TodouseReducer/> */}
+      <Practice/>
      
 
 

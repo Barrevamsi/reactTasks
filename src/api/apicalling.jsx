@@ -13,7 +13,7 @@ function Api(){
             setData(data)
             setFdata(data)
         })
-        .catch((error)=>console.log("error"))
+        .catch((error)=>console.log(error))
     },[])
 
     useEffect(()=>{
